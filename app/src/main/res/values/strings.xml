@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Hero Calc</string>
+    <string name="strAttack">Attack</string>
+    <string name="strSpeed">SPEED</string>
+    <string name="strDamage">DAMAGE</string>
+    <string name="strSelfLife">My Life</string>
+    <string name="strOppLife">Opp Life</string>
+    <string name="strSendAttack">Send Attack</string>
+    <string name="strSpdPlus">+</string>
+    <string name="strSpdMinus">-</string>
+    <string name="strDmgPlus">+</string>
+    <string name="strDmgMinus">-</string>
+    <string name="strLifeOppPlus">+</string>
+    <string name="strLifeOppMinus">-</string>
+    <string name="strLifeSelfPlus">+</string>
+    <string name="strLifeSelfMinus">-</string>
+
+</resources>
