@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:theme="@style/Theme.Design.NoActionBar"
     android:visibility="visible">
 
     <TableLayout
@@ -42,12 +44,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
-                android:gravity="center"
                 android:background="#0000DF"
                 android:fontFamily="@font/carter_one"
-                android:textSize="60sp"
+                android:gravity="center"
                 android:textColor="#FFFFFF"
-                />
+                android:textSize="60sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,12 +86,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="10"
-                android:gravity="center"
                 android:background="#DF0000"
                 android:fontFamily="@font/carter_one"
-                android:textSize="60sp"
+                android:gravity="center"
                 android:textColor="#FFFFFF"
-                />
+                android:textSize="60sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

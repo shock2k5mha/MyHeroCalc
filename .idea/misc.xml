@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/MyHeroCalc/app/src/main/res/layout/activity_main.xml" value="0.26268115942028986" />
+        <entry key="..\:/Android/MyHeroCalc/app/src/main/res/layout/attack_calc.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kevin/AndroidStudioProjects/MyHeroCalc/app/src/main/res/layout/activity_main.xml" value="0.10435663627152988" />
         <entry key="..\:/Users/kevin/AndroidStudioProjects/MyHeroCalc/app/src/main/res/layout/attack_calc.xml" value="0.26197916666666665" />
       </map>
