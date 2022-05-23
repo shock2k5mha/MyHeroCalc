@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:theme="@style/Theme.AppCompat.NoActionBar">
+    android:theme="@style/Theme.Design.NoActionBar"
+    >
 
     <TableLayout
         android:layout_width="match_parent"
@@ -18,18 +19,21 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10">
+            android:layout_weight="20">
 
             <TextView
                 android:id="@+id/txtOppLife"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
-                android:background="#DF0000"
+                android:background="@drawable/opp_life_background"
                 android:fontFamily="@font/carter_one"
                 android:gravity="center"
+                android:onClick="btnAttackOpponent"
+                android:shadowColor="@color/black"
+                android:shadowRadius="20"
                 android:textColor="#FFFFFF"
-                android:textSize="60sp" />
+                android:textSize="120sp" />
 
             <LinearLayout
                 android:id="@+id/LayOppCalc"
@@ -42,18 +46,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="@font/bangers"
+                    android:background="@drawable/plus_minus_red_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnOppLifePlus"
                     android:text="@string/strLifeOppPlus"
-                    android:textSize="60sp" />
+                    android:textSize="48sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
                 <Button
                     android:id="@+id/btnOppMinus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_red_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnOppLifeMinus"
-                    android:text="@string/strLifeOppMinus" />
+                    android:text="@string/strLifeOppMinus"
+                    android:textSize="48sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
 
             </LinearLayout>
 
@@ -62,18 +72,60 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="10">
+            android:layout_weight="0">
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="btnSettingsOnClick"
+                android:scaleType="center"
+                app:srcCompat="@mipmap/settings_icon_foreground"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/btnResetLife"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:longClickable="true"
+                android:onClick="btnResetOnClick"
+                android:scaleType="center"
+                app:srcCompat="@mipmap/reset_icon_foreground"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/btnDieRoll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="btnDieRollOnClick"
+                app:srcCompat="@mipmap/die_icon_foreground" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20">
 
             <TextView
                 android:id="@+id/txtSelfLife"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
-                android:background="#003DD6"
+                android:background="@drawable/self_life_background"
                 android:fontFamily="@font/carter_one"
                 android:gravity="center"
+                android:onClick="btnAttackSelf"
+                android:shadowColor="#000000"
+                android:shadowRadius="20"
                 android:textColor="#FFFFFF"
-                android:textSize="60sp" />
+                android:textSize="120sp" />
 
             <LinearLayout
                 android:id="@+id/LayMyLife"
@@ -83,19 +135,25 @@
 
                 <Button
                     android:id="@+id/btnMyPlus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_blue_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnSelfLifePlus"
-                    android:text="@string/strLifeSelfPlus" />
+                    android:text="@string/strLifeSelfPlus"
+                    android:textSize="48sp" />
 
                 <Button
                     android:id="@+id/btnMyMinus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_blue_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnSelfLifeMinus"
-                    android:text="@string/strLifeSelfMinus" />
+                    android:text="@string/strLifeSelfMinus"
+                    android:textSize="48sp" />
 
             </LinearLayout>
 
@@ -104,16 +162,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btnAtk"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="btnAttackOnPress"
-                android:text="@string/strAttack" />
-        </TableRow>
+            android:layout_weight="1"/>
 
     </TableLayout>
 

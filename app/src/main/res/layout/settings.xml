@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:id="@+id/rowSettOppLife"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/opp_life_background">
+
+            <TextView
+                android:id="@+id/txtSetOppLife"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:background="@null"
+                android:fontFamily="@font/carter_one"
+                android:gravity="bottom|center_horizontal"
+                android:text="@string/strStartingOppLife"
+                android:textSize="34sp" />
+
+            <EditText
+                android:id="@+id/inputSettStartOppLife"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:hint="25"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="34sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rowSettOppLifePlusMinus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0" >
+
+            <Button
+                android:id="@+id/btnSettOppLifePlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/plus_minus_red_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnSettOppLifePlus"
+                android:text="@string/strLifeOppPlus"
+                android:textSize="48sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/btnSettOppLifeMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/plus_minus_red_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnSettOppLifeMinus"
+                android:text="@string/strLifeOppMinus"
+                android:textSize="48sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/settRowSelfLife"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/self_life_background">
+
+            <TextView
+                android:id="@+id/txtSetSelfLife"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:background="@null"
+                android:fontFamily="@font/carter_one"
+                android:gravity="bottom|center_horizontal"
+                android:text="@string/strStartingSelfLife"
+                android:textSize="34sp" />
+
+            <EditText
+                android:id="@+id/inputSettStartSelfLife"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:hint="@string/strStartLifeHint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="34sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rowSettSelfLifePlusMinus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0" >
+
+            <Button
+                android:id="@+id/btnSettSelfLifePlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/plus_minus_blue_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnSettSelfLifePlus"
+                android:text="@string/strLifeSelfPlus"
+                android:textSize="48sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/btnSettSelfLifeMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/plus_minus_blue_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnSettSelfLifeMinus"
+                android:text="@string/strLifeSelfMinus"
+                android:textSize="48sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rowSettLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:scaleX="2"
+            android:scaleY="2">
+
+            <ImageView
+                android:id="@+id/imgSettLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                app:srcCompat="@mipmap/mhm_logo_icon_foreground" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/btnSettReturn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnSettingsReturnOnClick"
+                android:text="@string/strBack"
+                android:textSize="24sp" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     <string name="strSpeed">SPEED</string>
     <string name="strDamage">DAMAGE</string>
     <string name="strSelfLife">My Life</string>
-    <string name="strOppLife">Opp Life</string>
+    <string name="strOppLife">Opponent</string>
     <string name="strSendAttack">Send Attack</string>
     <string name="strSpdPlus">+</string>
     <string name="strSpdMinus">-</string>
@@ -14,5 +14,16 @@
     <string name="strLifeOppMinus">-</string>
     <string name="strLifeSelfPlus">+</string>
     <string name="strLifeSelfMinus">-</string>
-
+    <string name="strHighAttack">High Attack</string>
+    <string name="strMidAttack">Mid Attack</string>
+    <string name="strLowAttack">Low Attack</string>
+    <string name="strUnblocked">Unblocked</string>
+    <string name="strHalfBlock">Half\nBlock</string>
+    <string name="strFullBlock">Full\nBlock</string>
+    <string name="strSelectTargetPrompt">Please Select an attack target.</string>
+    <string name="strHoldResetPrompt">Please hold the reset button for 2 seconds to reset Life Counters.</string>
+    <string name="strStartingOppLife">Opponent\'s Starting Life: </string>
+    <string name="strStartingSelfLife">My Starting Life: </string>
+    <string name="strBack">Save</string>
+    <string name="strStartLifeHint">25</string>
 </resources>

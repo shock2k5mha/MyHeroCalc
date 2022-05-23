@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@drawable/calc_background_full"
     android:theme="@style/Theme.Design.NoActionBar"
     android:visibility="visible">
 
@@ -12,45 +13,86 @@
         android:layout_height="match_parent">
 
         <TableRow
+            android:id="@+id/rowTarget"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="2">
 
             <Button
                 android:id="@+id/btnAtkOpp"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strOppLife" />
+                android:background="@drawable/life_unselected_background"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnAttackTargetOpp"
+                android:text="@string/strOppLife"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnAtkSelf"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/strSelfLife" />
+                android:background="@drawable/life_unselected_background"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnAttackTargetSelf"
+                android:text="@string/strSelfLife"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
         </TableRow>
 
         <TableRow
+            android:id="@+id/rowSpeed"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="2">
 
-            <TextView
-                android:id="@+id/txtAtkSpeed"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerSpeed"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="10"
-                android:background="#0000DF"
-                android:fontFamily="@font/carter_one"
-                android:gravity="center"
-                android:textColor="#FFFFFF"
-                android:textSize="60sp" />
+                android:layout_weight="10">
+
+                <ImageView
+                    android:id="@+id/imgSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/strHighAttack"
+                    android:scaleType="fitCenter"
+                    android:scaleX="1.8"
+                    android:scaleY="1.8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/txtAtkSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:fontFamily="@font/carter_one"
+                    android:gravity="center"
+                    android:onClick="btnChangeAttackZone"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="50"
+                    android:singleLine="false"
+                    android:textColor="#ffffff"
+                    android:textSize="75sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imgSpeed"
+                    app:layout_constraintStart_toStartOf="@+id/imgSpeed"
+                    app:layout_constraintTop_toTopOf="@+id/imgSpeed" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/containerSpeedDrawer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -61,8 +103,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_blue_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnSpeedPlus"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="20"
                     android:text="@string/strSpdPlus"
+                    android:textSize="60sp"
                     tools:ignore="DuplicateSpeakableTextCheck" />
 
                 <Button
@@ -70,29 +117,62 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_blue_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnSpeedMinus"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="20"
                     android:text="@string/strSpdMinus"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
+                    android:textSize="60sp"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
             </LinearLayout>
         </TableRow>
 
         <TableRow
+            android:id="@+id/rowDamage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="2">
 
-            <TextView
-                android:id="@+id/txtAtkDamage"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerDamage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="10"
-                android:background="#DF0000"
-                android:fontFamily="@font/carter_one"
-                android:gravity="center"
-                android:textColor="#FFFFFF"
-                android:textSize="60sp" />
+                android:layout_weight="10">
+
+                <ImageView
+                    android:id="@+id/imgDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Damage Icon"
+                    android:scaleX="1.7"
+                    android:scaleY="1.7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/txtAtkDamage"
+                    app:layout_constraintTop_toTopOf="@+id/txtAtkDamage"
+                    app:srcCompat="@mipmap/damage_icon_foreground" />
+
+                <TextView
+                    android:id="@+id/txtAtkDamage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="10"
+                    android:fontFamily="@font/carter_one"
+                    android:gravity="center"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="75sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
+                android:id="@+id/containerDamageDrawer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -103,16 +183,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_red_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnDmgPlus"
-                    android:text="@string/strDmgPlus" />
+                    android:shadowColor="#000000"
+                    android:shadowRadius="20"
+                    android:text="@string/strDmgPlus"
+                    android:textSize="60sp" />
 
                 <Button
                     android:id="@+id/btnDmgMinus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/plus_minus_red_gradient"
+                    android:fontFamily="@font/carter_one"
                     android:onClick="btnDmgMinus"
-                    android:text="@string/strDmgMinus" />
+                    android:shadowColor="#000000"
+                    android:shadowRadius="20"
+                    android:text="@string/strDmgMinus"
+                    android:textSize="60sp" />
             </LinearLayout>
         </TableRow>
 
@@ -122,12 +212,38 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/btnSendAttack"
-                android:layout_width="match_parent"
+                android:id="@+id/btnUnblocked"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="btnSendAttackOnPress"
-                android:text="@string/strSendAttack" />
+                android:background="@drawable/block_button_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnUnblockedAttack"
+                android:text="@string/strUnblocked"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnHalfBlock"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/block_button_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnHalfBlockedAttack"
+                android:text="@string/strHalfBlock"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnFullBlock"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/block_button_gradient"
+                android:fontFamily="@font/carter_one"
+                android:onClick="btnFullblockAttack"
+                android:text="@string/strFullBlock"
+                android:textSize="20sp" />
+
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
